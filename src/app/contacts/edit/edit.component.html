@@ -1,6 +1,6 @@
-<div class="page">
+<div class="page" *ngIf="contact !==null ">
     <h2>Add Contact</h2>
-    <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+    <form [formGroup]="contactForm" (ngSubmit)="editContact()">
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" formControlName="name" />
@@ -17,6 +17,6 @@
             <label for="name">Email:</label>
             <input type="text" id="email" formControlName="email" />
         </div>
-        <button type="submit" [disabled]="contactForm.invalid">Submit Contact</button>
+        <button type="submit" [disabled]="contactForm.invalid">Edit Contact</button>
     </form>
 </div>

@@ -14,6 +14,16 @@ export class ContactsService {
     this.contacts.push(c)
   }
 
+  public EditContact(c:Contact){
+    const contact = this.contacts.find((contact)=> c.id === contact.id);
+    if(!contact){
+      return null;
+    }
+    const index = this.contacts.indexOf(contact)
+    this.contacts[index] = c;
+    return c;
+  }
+
   public GetById(id:number){
     const contact = this.contacts.find((c)=> c.id === id);
     if(!contact){
